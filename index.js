@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 5000;
+const port = 3000;
 
 app.get("/", (req, res) => {
   console.log(`${new Date()} ${req.method} ${req.path}`);
