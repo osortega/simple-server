@@ -1,17 +1,17 @@
 {
-    "postCreateCommand": "yarn install",
-    "postAttachCommand": {
-      "server": "yarn start"
-    },
-    "portsAttributes": {
-      "3000": {
-        "label": "Application",
-        "onAutoForward": "openPreview"
-      }
-    },
-    "customizations": {
-      "codespaces": {
-        "openFiles": ["index.js", "package.json"]
-      }
+  "postCreateCommand": "yarn install",
+  "postAttachCommand": {
+    "server": "yarn start"
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
     }
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["index.js", "package.json"]
+    }
+  }
 }
