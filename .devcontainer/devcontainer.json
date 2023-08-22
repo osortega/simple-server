@@ -3,7 +3,11 @@
     "postAttachCommand": {
       "server": "yarn start"
     },
-    "forwardPorts": [3000],
+    "portsAttributes": {
+      "3000": {
+        "label": "Application"
+      }
+    },
     "customizations": {
       "codespaces": {
         "openFiles": ["index.js", "package.json"]
