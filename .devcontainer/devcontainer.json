@@ -1,3 +1,12 @@
 {
-    "forwardPorts": [3000]
+    "postCreateCommand": "yarn install",
+    "postAttachCommand": {
+      "server": "yarn start"
+    },
+    "forwardPorts": [3000],
+    "customizations": {
+      "codespaces": {
+        "openFiles": ["index.js", "package.json"]
+      }
+    }
 }
