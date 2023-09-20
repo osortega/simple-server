@@ -1,12 +1,9 @@
 {
-  "postCreateCommand": "yarn install",
-  "postAttachCommand": {
-    "server": "yarn start"
-  },
-  "forwardPorts": [3001],
-  "customizations": {
-    "codespaces": {
-      "openFiles": ["index.js", "package.json"]
-    }
+  "name": "Broken with Objects",
+  "forwardPorts": [
+    3001
+  ],
+  "postCreateCommand": {
+    "Some Command": "${containerWorkspaceFolder}/post-create.sh"
   }
 }
