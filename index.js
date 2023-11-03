@@ -1,10 +1,19 @@
-const express = require("express");
-const app = express();
-const port = 3001;
+var net = require('net');
 
-app.get("/", (req, res) => {
-  console.log(`${new Date()} ${req.method} ${req.path}`);
-  res.send("Hello world!");
+var client = new net.Socket();
+client.connect({ keepAlive: true, port: 4242, host: 'tcpbin.com' }, function() {
+	console.log('Connected');
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+client.on('data', function(data) {
+	console.log('Received: ' + data);
+});
+
+client.on('close', function() {
+	console.log('Connection closed');
+});
+
+client.on('ready', function() {
+  console.log('Ready');
+  client.write('Sending data from client\n');
+});
