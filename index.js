@@ -1,7 +1,8 @@
 var net = require('net');
 
 var client = new net.Socket();
-client.connect({ keepAlive: true, port: 4242, host: 'tcpbin.com' }, function() {
+// Create a server on https://tcpbin.net/ and replace the port below
+client.connect({ port: 53417, host: 'tcpbin.net' }, function() {
 	console.log('Connected');
 });
 
