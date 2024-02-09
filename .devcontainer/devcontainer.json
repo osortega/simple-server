@@ -4,37 +4,176 @@
     "server": "yarn start"
   },
   "forwardPorts": [
-    3001,
-    3002,
+    80,
+    2206,
+    2222,
     3003,
-    3004,
     3005,
-    3006,
-    3007,
-    3008,
-    3009,
-    3010,
-    3011,
-    3012,
-    3013,
-    3014,
-    3015,
-    3016,
-    3017,
-    3018,
-    3019,
-    3020,
-    3021,
-    3022,
-    3023,
-    3024,
-    3025,
-    3026,
-    3027,
-    3028,
-    3029,
-    3030
+    3033,
+    3034,
+    3035,
+    3306,
+    3333,
+    4000,
+    5800,
+    42421,
+    8025,
+    10042,
+    9092,
+    9293,
+    15000,
+    15001,
+    15306,
+    18081,
+    8091,
+    28081,
+    9200,
+    9400,
+    9091,
+    43334,
+    8000,
+    8001,
+    8080,
+    9000,
+    6006,
+    8003
   ],
+  "appPort": [
+    80,
+    2206,
+    2222,
+    3003,
+    3005,
+    3033,
+    3034,
+    3035,
+    3306,
+    3333,
+    4000,
+    8025,
+    10042,
+    9092,
+    9293,
+    15000,
+    15001,
+    15306,
+    18081,
+    8091,
+    28081,
+    9200,
+    9400,
+    9091,
+    43334,
+    8000,
+    8001,
+    9000,
+    6006,
+    8003
+  ],
+  "portsAttributes": {
+    "80": {
+      "label": "web"
+    },
+    "10042": {
+      "label": "static-dev"
+    },
+    "2206": {
+      "label": "Copilot API"
+    },
+    "2222": {
+      "label": "ssh"
+    },
+    "3003": {
+      "label": "alambic"
+    },
+    "3005": {
+      "label": "registry"
+    },
+    "3033": {
+      "label": "babeld (https)"
+    },
+    "3034": {
+      "label": "babeld (git)"
+    },
+    "3035": {
+      "label": "babeld (ssh)"
+    },
+    "3306": {
+      "label": "mysql"
+    },
+    "3333": {
+      "label": "dev-identity-provider-ruby"
+    },
+    "4000": {
+      "label": "docs preview"
+    },
+    "42421": {
+      "label": "meuse"
+    },
+    "8025": {
+      "label": "mailhog"
+    },
+    "9092": {
+      "label": "kafka-lite"
+    },
+    "9293": {
+      "label": "web-test-runner"
+    },
+    "15000": {
+      "label": "vtcombo (http)"
+    },
+    "15001": {
+      "label": "vtcombo (grpc)"
+    },
+    "15306": {
+      "label": "vtcombo (mysql)"
+    },
+    "18081": {
+      "label": "aqueduct-lite"
+    },
+    "8091": {
+      "label": "authzd"
+    },
+    "8088": {
+      "label": "notifyd"
+    },
+    "28081": {
+      "label": "spokesd"
+    },
+    "9200": {
+      "label": "elasticsearch"
+    },
+    "9400": {
+      "label": "elasticsearch8"
+    },
+    "9091": {
+      "label": "memex-dev"
+    },
+    "5800": {
+      "label": "memex-vnc"
+    },
+    "43334": {
+      "label": "system-tests"
+    },
+    "8000": {
+      "label": "registry-metadata"
+    },
+    "8001": {
+      "label": "container-registry"
+    },
+    "8080": {
+      "label": "memory-alpha"
+    },
+    "9000": {
+      "label": "minio"
+    },
+    "6006": {
+      "label": "react-storybook"
+    },
+    "8003": {
+      "label": "authnd-local-mobile-client"
+    }
+  },
   "customizations": {
     "codespaces": {
       "openFiles": ["index.js", "package.json"]
