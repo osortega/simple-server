@@ -1,8 +1,5 @@
 {
-  "postCreateCommand": "yarn install",
-  "postAttachCommand": {
-    "server": "yarn start"
-  },
+  "postCreateCommand": "yarn install; yarn start",
   "customizations": {
     "codespaces": {
       "openFiles": ["index.js", "package.json"]
