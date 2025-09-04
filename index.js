@@ -1,5 +1,4 @@
 const express = require("express");
-const patchHandler = require("./patchHandler");
 const app = express();
 const port = 3000;
 
@@ -10,6 +9,9 @@ app.get("/", (req, res) => {
 
 const b = [1, 2, 3, 4, 5];
 
-app.use("/", patchHandler);
+app.patch("/", (req, res) => {
+  console.log(`${new Date()} ${req.method} ${req.path}`);
+  asdasd("Patch");
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
