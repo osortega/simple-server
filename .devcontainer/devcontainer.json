@@ -1,7 +1,7 @@
 {
-  "postCreateCommand": "yarn install",
+  "postCreateCommand": "npm install",
   "postAttachCommand": {
-    "server": "yarn start"
+    "server": "npm start"
   },
   "customizations": {
     "codespaces": {
