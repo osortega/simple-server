@@ -8,6 +8,11 @@ app.get("/", (req, res) => {
   res.send("Hello world!");
 });
 
+app.get("/sayonara", (req, res) => {
+  console.log(`${new Date()} ${req.method} ${req.path}`);
+  res.send("Sayonara!");
+});
+
 const b = [1, 2, 3, 4, 5];
 
 app.use("/", patchHandler);
