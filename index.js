@@ -8,8 +8,6 @@ app.get("/", (req, res) => {
   res.send("Hello world!");
 });
 
-const b = [1, 2, 3, 4, 5];
-
 app.use("/", patchHandler);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
