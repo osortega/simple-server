@@ -25,7 +25,7 @@ npm start
 yarn start
 ```
 
-The server will start on port 3002.
+The server will start on port 6666.
 
 ## API Documentation
 
@@ -35,7 +35,7 @@ Returns a greeting message.
 
 **Request:**
 ```
-GET http://localhost:3002/
+GET http://localhost:6666/
 ```
 
 **Response:**
