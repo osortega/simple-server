@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.patch("/", (req, res) => {
   console.log(`${new Date()} ${req.method} ${req.path}`);
-  asdasd("Patch");
+  res.send("Patch received");
 });
 
 module.exports = router;

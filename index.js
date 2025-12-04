@@ -1,5 +1,6 @@
 const express = require("express");
 const patchHandler = require("./patchHandler");
+const feedbackHandler = require("./feedbackHandler");
 const app = express();
 const port = 7000;
 
@@ -10,6 +11,7 @@ app.get("/", (req, res) => {
 
 const b = [1, 2, 3, 4, 5];
 
+app.use("/", feedbackHandler);
 app.use("/", patchHandler);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
