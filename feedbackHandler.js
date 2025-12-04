@@ -3,6 +3,7 @@ const router = express.Router();
 
 // In-memory storage for feedback (in a real app, this would be a database)
 const feedbackStore = [];
+let nextId = 1;
 
 router.post("/feedback", express.json(), (req, res) => {
   console.log(`${new Date()} ${req.method} ${req.path}`);
@@ -14,7 +15,7 @@ router.post("/feedback", express.json(), (req, res) => {
   }
   
   const feedback = {
-    id: feedbackStore.length + 1,
+    id: nextId++,
     message,
     email: email || null,
     timestamp: new Date().toISOString()
