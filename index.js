@@ -5,10 +5,8 @@ const port = 7000;
 
 app.get("/", (req, res) => {
   console.log(`${new Date()} ${req.method} ${req.path}`);
-  res.send("Hello world!");
+  res.send("Hello!");
 });
-
-const b = [1, 2, 3, 4, 5];
 
 app.use("/", patchHandler);
 
