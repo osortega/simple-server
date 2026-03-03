@@ -4,6 +4,16 @@ const app = express();
 
 const port = 824;
 
+app.post("/silly", (req, res) => {
+  const jokes = [
+    "Why don't scientists trust atoms? Because they make up everything!",
+    "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+    "Why did the scarecrow win an award? Because he was outstanding in his field!",
+  ];
+  const joke = jokes[Math.floor(Math.random() * jokes.length)];
+  res.json({ message: "🤪 Here's a silly joke for you!", joke });
+});
+
 app.get("/", (req, res) => {
   console.log(`${new Date()} ${req.method} ${req.path}`);
   const html = `
