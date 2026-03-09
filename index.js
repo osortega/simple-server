@@ -2,7 +2,7 @@ const express = require("express");
 const patchHandler = require("./patchHandler");
 const app = express();
 
-const port = 1243;
+const port = 5555;
 
 app.put("/silly2", (req, res) => {
   const sounds = ["🎺 tuba", "🥁 kazoo", "🎻 squeaky violin", "📯 vuvuzela", "🔔 cowbell"];
