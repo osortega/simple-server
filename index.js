@@ -2,7 +2,19 @@ const express = require("express");
 const patchHandler = require("./patchHandler");
 const app = express();
 
-const port = 824;
+const port = 1252;
+
+app.put("/silly2", (req, res) => {
+  const sounds = ["🎺 tuba", "🥁 kazoo", "🎻 squeaky violin", "📯 vuvuzela", "🔔 cowbell"];
+  const sound = sounds[Math.floor(Math.random() * sounds.length)];
+  res.json({ message: "You PUT a silly sound on the server!", sound });
+});
+
+app.put("/silly", (req, res) => {
+  const animals = ["🐸 frog", "🦆 duck", "🐧 penguin", "🦙 llama", "🐡 blowfish"];
+  const animal = animals[Math.floor(Math.random() * animals.length)];
+  res.json({ message: "You just PUT a silly animal on the server!", animal });
+});
 
 app.post("/silly", (req, res) => {
   const jokes = [
