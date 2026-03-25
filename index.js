@@ -101,4 +101,8 @@ const b = [1, 2, 3, 4, 5];
 
 app.use("/", patchHandler);
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+if (require.main === module) {
+  app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+}
+
+module.exports = { app, port };
