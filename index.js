@@ -9,6 +9,11 @@ app.get("/hello", (req, res) => {
   res.json({ message: "Hello!" });
 });
 
+app.get("/ello", (req, res) => {
+  console.log(`${new Date()} ${req.method} ${req.path}`);
+  res.json({ message: "Ello!" });
+});
+
 app.put("/silly2", (req, res) => {
   const sounds = ["🎺 tuba", "🥁 kazoo", "🎻 squeaky violin", "📯 vuvuzela", "🔔 cowbell"];
   const sound = sounds[Math.floor(Math.random() * sounds.length)];
