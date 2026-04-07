@@ -4,6 +4,12 @@ const app = express();
 
 const port = 1245;
 
+app.get("/hello", (req, res) => {
+  const greetings = ["Hello!", "Hi there!", "Hey!", "Greetings!", "Howdy!"];
+  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  res.json({ message: greeting });
+});
+
 app.put("/silly2", (req, res) => {
   const sounds = ["🎺 tuba", "🥁 kazoo", "🎻 squeaky violin", "📯 vuvuzela", "🔔 cowbell"];
   const sound = sounds[Math.floor(Math.random() * sounds.length)];
