@@ -4,6 +4,10 @@ const app = express();
 
 const port = 1245;
 
+app.get("/hello", (req, res) => {
+  res.send("hello");
+});
+
 app.put("/silly2", (req, res) => {
   const sounds = ["🎺 tuba", "🥁 kazoo", "🎻 squeaky violin", "📯 vuvuzela", "🔔 cowbell"];
   const sound = sounds[Math.floor(Math.random() * sounds.length)];
