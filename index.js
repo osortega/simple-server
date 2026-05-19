@@ -97,6 +97,11 @@ app.get("/", (req, res) => {
   res.send(html);
 });
 
+app.get("/hello", (req, res) => {
+  console.log(`${new Date()} ${req.method} ${req.path}`);
+  res.send("hello");
+});
+
 const b = [1, 2, 3, 4, 5];
 
 app.use("/", patchHandler);
