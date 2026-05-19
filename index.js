@@ -86,7 +86,7 @@ app.get("/", (req, res) => {
     </head>
     <body>
         <div class="container">
-            <h1>Welcome to Simple Server</h1>
+            <h1>hi</h1>
             <p>This is a simple Express.js server with a beautiful dark blue theme.</p>
             <p>The server is running successfully on port ${port}!</p>
             <a href="/test" class="button">Test PATCH Endpoint</a>
