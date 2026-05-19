@@ -6,6 +6,11 @@ router.patch("/", (req, res) => {
   res.send("Patch");
 });
 
+router.get("/hi", (req, res) => {
+  console.log(`${new Date()} ${req.method} ${req.path}`);
+  res.send("hi");
+});
+
 router.get("/test", (req, res) => {
   console.log(`${new Date()} ${req.method} ${req.path}`);
   const html = `
