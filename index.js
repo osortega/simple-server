@@ -85,12 +85,23 @@ app.get("/", (req, res) => {
         </style>
     </head>
     <body>
-        <div class="container">
-            <h1>Welcome to Simple Server</h1>
-            <p>This is a simple Express.js server with a beautiful dark blue theme.</p>
-            <p>The server is running successfully on port ${port}!</p>
-            <a href="/test" class="button">Test PATCH Endpoint</a>
-        </div>
+        <div id="root"></div>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+        <script>
+            const serverPort = ${port};
+            const App = () =>
+                React.createElement(
+                    "div",
+                    { className: "container" },
+                    React.createElement("h1", null, "Welcome to Simple Server"),
+                    React.createElement("p", null, "This is a simple Express.js server with a beautiful dark blue theme."),
+                    React.createElement("p", null, "The server is running successfully on port " + serverPort + "!"),
+                    React.createElement("a", { href: "/test", className: "button" }, "Test PATCH Endpoint")
+                );
+
+            ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(App));
+        </script>
     </body>
     </html>
   `;
