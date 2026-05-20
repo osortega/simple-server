@@ -72,27 +72,35 @@ router.get("/test", (req, res) => {
         </style>
     </head>
     <body>
-        <div class="container">
-            <h1>PATCH Endpoint Test</h1>
-            <p>Click the button below to test the PATCH endpoint:</p>
-            <button class="button" onclick="testPatch()">Send PATCH Request</button>
-            <div id="result"></div>
-            <a href="/" class="button">Back to Home</a>
-        </div>
-        
+        <div id="root"></div>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
         <script>
-            async function testPatch() {
-                const resultDiv = document.getElementById('result');
-                try {
-                    const response = await fetch('/', {
-                        method: 'PATCH'
-                    });
-                    const text = await response.text();
-                    resultDiv.innerHTML = '<strong>Response:</strong> ' + text;
-                } catch (error) {
-                    resultDiv.innerHTML = '<strong>Error:</strong> ' + error.message;
+            const e = React.createElement;
+
+            function PatchTestApp() {
+                const [result, setResult] = React.useState("");
+
+                async function testPatch() {
+                    try {
+                        const response = await fetch('/', { method: 'PATCH' });
+                        const text = await response.text();
+                        setResult("Response: " + text);
+                    } catch (error) {
+                        setResult("Error: " + error.message);
+                    }
                 }
+
+                return e("div", { className: "container" },
+                    e("h1", null, "PATCH Endpoint Test"),
+                    e("p", null, "Click the button below to test the PATCH endpoint:"),
+                    e("button", { className: "button", onClick: testPatch }, "Send PATCH Request"),
+                    e("div", { id: "result" }, result),
+                    e("a", { href: "/", className: "button" }, "Back to Home")
+                );
             }
+
+            ReactDOM.createRoot(document.getElementById("root")).render(e(PatchTestApp));
         </script>
     </body>
     </html>
