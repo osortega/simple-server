@@ -30,6 +30,10 @@ app.get("/hello", (req, res) => {
   res.send("hello");
 });
 
+app.get("/hello2", (req, res) => {
+  res.send("hello2");
+});
+
 app.get("/", (req, res) => {
   console.log(`${new Date()} ${req.method} ${req.path}`);
   const html = `
