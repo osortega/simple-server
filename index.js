@@ -3,7 +3,7 @@ const path = require("path");
 const patchHandler = require("./patchHandler");
 const app = express();
 
-const port = 9245;
+const port = 8888;
 
 app.use(express.static(path.join(__dirname, "public")));
 
