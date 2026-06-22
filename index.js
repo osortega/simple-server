@@ -61,6 +61,14 @@ app.get("/", (req, res) => {
                 margin-bottom: 20px;
                 font-size: 2.5em;
             }
+            .ball {
+                width: 96px;
+                height: 96px;
+                margin: 0 auto 24px;
+                border-radius: 50%;
+                background: radial-gradient(circle at 30% 30%, #ffffff 0%, #ff5252 35%, #c62828 100%);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+            }
             p {
                 color: #bbdefb;
                 font-size: 1.2em;
@@ -86,6 +94,7 @@ app.get("/", (req, res) => {
     </head>
     <body>
         <div class="container">
+            <div class="ball" aria-label="Decorative ball"></div>
             <h1>Welcome to Simple Server</h1>
             <p>This is a simple Express.js server with a beautiful dark blue theme.</p>
             <p>The server is running successfully on port ${port}!</p>
