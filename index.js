@@ -1,4 +1,6 @@
 const express = require("express");
+const React = require("react");
+const ReactDOMServer = require("react-dom/server");
 const patchHandler = require("./patchHandler");
 const app = express();
 
@@ -28,6 +30,18 @@ app.post("/silly", (req, res) => {
 
 app.get("/", (req, res) => {
   console.log(`${new Date()} ${req.method} ${req.path}`);
+
+  const appMarkup = ReactDOMServer.renderToStaticMarkup(
+    React.createElement(
+      "div",
+      { className: "container" },
+      React.createElement("h1", null, "Welcome to Simple Server"),
+      React.createElement("p", null, "This is a simple Express.js server with a beautiful dark blue theme."),
+      React.createElement("p", null, `The server is running successfully on port ${port}!`),
+      React.createElement("a", { href: "/test", className: "button" }, "Test PATCH Endpoint")
+    )
+  );
+
   const html = `
     <!DOCTYPE html>
     <html lang="en">
@@ -85,12 +99,7 @@ app.get("/", (req, res) => {
         </style>
     </head>
     <body>
-        <div class="container">
-            <h1>Welcome to Simple Server</h1>
-            <p>This is a simple Express.js server with a beautiful dark blue theme.</p>
-            <p>The server is running successfully on port ${port}!</p>
-            <a href="/test" class="button">Test PATCH Endpoint</a>
-        </div>
+        ${appMarkup}
     </body>
     </html>
   `;
