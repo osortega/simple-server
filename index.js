@@ -18,16 +18,6 @@ app.put("/silly", (req, res) => {
   res.json({ message: "You just PUT a silly animal on the server!", animal });
 });
 
-app.post("/silly", (req, res) => {
-  const jokes = [
-    "Why don't scientists trust atoms? Because they make up everything!",
-    "I told my wife she was drawing her eyebrows too high. She looked surprised.",
-    "Why did the scarecrow win an award? Because he was outstanding in his field!",
-  ];
-  const joke = jokes[Math.floor(Math.random() * jokes.length)];
-  res.json({ message: "🤪 Here's a silly joke for you!", joke });
-});
-
 function HelloWorld() {
   return React.createElement("h1", null, "Hello World");
 }
