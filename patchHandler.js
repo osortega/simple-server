@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.patch("/", (req, res) => {
   console.log(`${new Date()} ${req.method} ${req.path}`);
-  res.send("Patch");
+  res.send("hello");
 });
 
 router.get("/test", (req, res) => {
