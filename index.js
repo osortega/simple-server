@@ -2,7 +2,7 @@ const express = require("express");
 const patchHandler = require("./patchHandler");
 const app = express();
 
-const port = 1245;
+const port = 9564;
 
 app.put("/silly2", (req, res) => {
   const sounds = ["🎺 tuba", "🥁 kazoo", "🎻 squeaky violin", "📯 vuvuzela", "🔔 cowbell"];
@@ -24,6 +24,11 @@ app.post("/silly", (req, res) => {
   ];
   const joke = jokes[Math.floor(Math.random() * jokes.length)];
   res.json({ message: "🤪 Here's a silly joke for you!", joke });
+});
+
+app.get("/hello", (req, res) => {
+  console.log(`${new Date()} ${req.method} ${req.path}`);
+  res.json({ message: "Hello!" });
 });
 
 app.get("/", (req, res) => {
