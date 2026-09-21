@@ -97,6 +97,37 @@ app.get("/", (req, res) => {
   res.send(html);
 });
 
+app.get("/dashboard", (req, res) => {
+  console.log(`${new Date()} ${req.method} ${req.path}`);
+  const user = { name: "Jane Doe", role: "Admin", joined: "2024-01-15" };
+  const html = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Dashboard</title>
+        <style>
+            body { background-color: #1a237e; color: white; font-family: Arial, sans-serif; margin: 0; padding: 20px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+            .card { background-color: #283593; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); max-width: 400px; width: 100%; }
+            h1 { color: #e3f2fd; margin-bottom: 20px; }
+            .field { margin: 10px 0; color: #bbdefb; font-size: 1.1em; }
+            .label { font-weight: bold; color: #90caf9; }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h1>User Dashboard</h1>
+            <div class="field"><span class="label">Name:</span> ${user.name}</div>
+            <div class="field"><span class="label">Role:</span> ${user.role}</div>
+            <div class="field"><span class="label">Joined:</span> ${user.joined}</div>
+        </div>
+    </body>
+    </html>
+  `;
+  res.send(html);
+});
+
 const b = [1, 2, 3, 4, 5];
 
 app.use("/", patchHandler);
