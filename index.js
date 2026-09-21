@@ -26,6 +26,10 @@ app.post("/silly", (req, res) => {
   res.json({ message: "🤪 Here's a silly joke for you!", joke });
 });
 
+app.get("/hello", (req, res) => {
+  res.send("hello");
+});
+
 app.get("/", (req, res) => {
   console.log(`${new Date()} ${req.method} ${req.path}`);
   const html = `
